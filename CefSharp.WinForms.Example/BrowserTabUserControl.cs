@@ -21,8 +21,7 @@ namespace CefSharp.WinForms.Example
         private IntPtr browserHandle;
         private ChromeWidgetMessageInterceptor messageInterceptor;
         private bool multiThreadedMessageLoopEnabled;
-
-        public BrowserTabUserControl(Action<string, int?> openNewTab, string url, bool multiThreadedMessageLoopEnabled)
+        public BrowserTabUserControl(Action<string, int?> openNewTab, string url, bool multiThreadedMessageLoopEnabled, IContextMenuHandler callback)
         {
             InitializeComponent();
 
@@ -35,7 +34,7 @@ namespace CefSharp.WinForms.Example
 
             Browser = browser;
 
-            browser.MenuHandler = new MenuHandler();
+            browser.MenuHandler = callback;
             browser.RequestHandler = new WinFormsRequestHandler(openNewTab);
             browser.JsDialogHandler = new JsDialogHandler();
             browser.DownloadHandler = new DownloadHandler();
@@ -175,17 +174,17 @@ namespace CefSharp.WinForms.Example
             switch (eventName)
             {
                 case "click":
-                {
-                    var message = eventData.ToString();
-                    var dataDictionary = eventData as Dictionary<string, object>;
-                    if (dataDictionary != null)
                     {
-                        var result = string.Join(", ", dataDictionary.Select(pair => pair.Key + "=" + pair.Value));
-                        message = "event data: " + result;
+                        var message = eventData.ToString();
+                        var dataDictionary = eventData as Dictionary<string, object>;
+                        if (dataDictionary != null)
+                        {
+                            var result = string.Join(", ", dataDictionary.Select(pair => pair.Key + "=" + pair.Value));
+                            message = "event data: " + result;
+                        }
+                        MessageBox.Show(message, "Javascript event arrived", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        break;
                     }
-                    MessageBox.Show(message, "Javascript event arrived", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    break;
-                }
             }
         }
 

@@ -63,7 +63,7 @@ namespace CefSharp.WinForms.Example
                 const bool multiThreadedMessageLoop = true;
                 const bool externalMessagePump = false;
 
-                var browser = new BrowserForm(multiThreadedMessageLoop);
+                var browser = new BrowserForm(multiThreadedMessageLoop, null);
                 //var browser = new SimpleBrowserForm(multiThreadedMessageLoop);
                 //var browser = new TabulationDemoForm();
 

@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using CefSharp.Example;
 using CefSharp.Example.Callback;
 using CefSharp.Example.Handlers;
+using CefSharp.WinForms.Example.Handlers;
 
 namespace CefSharp.WinForms.Example
 {
@@ -23,7 +24,9 @@ namespace CefSharp.WinForms.Example
 
         private bool multiThreadedMessageLoopEnabled;
 
-        public BrowserForm(bool multiThreadedMessageLoopEnabled)
+        IContextMenuHandler callback;
+
+        public BrowserForm(bool multiThreadedMessageLoopEnabled, IContextMenuHandler callback)
         {
             InitializeComponent();
 
@@ -38,6 +41,7 @@ namespace CefSharp.WinForms.Example
             ResizeEnd += (s, e) => ResumeLayout(true);
 
             this.multiThreadedMessageLoopEnabled = multiThreadedMessageLoopEnabled;
+            this.callback = callback;
         }
 
         public IContainer Components
@@ -55,7 +59,14 @@ namespace CefSharp.WinForms.Example
 
         private void BrowserFormLoad(object sender, EventArgs e)
         {
-            AddTab(CefExample.DefaultUrl);
+            //AddTab(CefExample.DefaultUrl);
+        }
+
+        public void ShowUrl(string url)
+        {
+            AddTab(url);
+            if (!Visible)
+                Show();
         }
 
         /// <summary>
@@ -85,7 +96,7 @@ namespace CefSharp.WinForms.Example
         {
             browserTabControl.SuspendLayout();
 
-            var browser = new BrowserTabUserControl(AddTab, url, multiThreadedMessageLoopEnabled)
+            var browser = new BrowserTabUserControl(AddTab, url, multiThreadedMessageLoopEnabled, this.callback)
             {
                 Dock = DockStyle.Fill,
             };
@@ -98,8 +109,8 @@ namespace CefSharp.WinForms.Example
             //This call isn't required for the sample to work. 
             //It's sole purpose is to demonstrate that #553 has been resolved.
             browser.CreateControl();
-
             tabPage.Controls.Add(browser);
+
 
             if (insertIndex == null)
             {
