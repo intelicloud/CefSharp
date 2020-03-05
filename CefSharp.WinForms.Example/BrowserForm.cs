@@ -640,5 +640,11 @@ namespace CefSharp.WinForms.Example
                 };
             }
         }
+
+        private void BrowserForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            e.Cancel = true;
+        }
     }
 }

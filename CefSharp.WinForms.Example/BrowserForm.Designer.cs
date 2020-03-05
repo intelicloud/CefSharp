@@ -37,6 +37,7 @@ namespace CefSharp.WinForms.Example
             this.printToPdfToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showDevToolsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showDevToolsDockedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeDevToolsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,7 +70,6 @@ namespace CefSharp.WinForms.Example
             this.loadExtensionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.javascriptBindingStressTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.browserTabControl = new System.Windows.Forms.TabControl();
-            this.showDevToolsDockedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -109,7 +109,7 @@ namespace CefSharp.WinForms.Example
             // 
             this.newTabToolStripMenuItem.Name = "newTabToolStripMenuItem";
             this.newTabToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
-            this.newTabToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.newTabToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.newTabToolStripMenuItem.Text = "&New Tab";
             this.newTabToolStripMenuItem.Click += new System.EventHandler(this.NewTabToolStripMenuItemClick);
             // 
@@ -117,54 +117,61 @@ namespace CefSharp.WinForms.Example
             // 
             this.closeTabToolStripMenuItem.Name = "closeTabToolStripMenuItem";
             this.closeTabToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W)));
-            this.closeTabToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.closeTabToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.closeTabToolStripMenuItem.Text = "&Close Tab";
             this.closeTabToolStripMenuItem.Click += new System.EventHandler(this.CloseTabToolStripMenuItemClick);
             // 
             // printToolStripMenuItem
             // 
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.printToolStripMenuItem.Text = "&Print";
             this.printToolStripMenuItem.Click += new System.EventHandler(this.PrintToolStripMenuItemClick);
             // 
             // printToPdfToolStripMenuItem
             // 
             this.printToPdfToolStripMenuItem.Name = "printToPdfToolStripMenuItem";
-            this.printToPdfToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.printToPdfToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.printToPdfToolStripMenuItem.Text = "Print To Pdf";
             this.printToPdfToolStripMenuItem.Click += new System.EventHandler(this.PrintToPdfToolStripMenuItemClick);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItemClick);
             // 
             // showDevToolsMenuItem
             // 
             this.showDevToolsMenuItem.Name = "showDevToolsMenuItem";
-            this.showDevToolsMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.showDevToolsMenuItem.Size = new System.Drawing.Size(207, 22);
             this.showDevToolsMenuItem.Text = "Show Dev Tools (Default)";
             this.showDevToolsMenuItem.Click += new System.EventHandler(this.ShowDevToolsMenuItemClick);
+            // 
+            // showDevToolsDockedToolStripMenuItem
+            // 
+            this.showDevToolsDockedToolStripMenuItem.Name = "showDevToolsDockedToolStripMenuItem";
+            this.showDevToolsDockedToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.showDevToolsDockedToolStripMenuItem.Text = "Show Dev Tools (Docked)";
+            this.showDevToolsDockedToolStripMenuItem.Click += new System.EventHandler(this.ShowDevToolsDockedMenuItemClick);
             // 
             // closeDevToolsMenuItem
             // 
             this.closeDevToolsMenuItem.Name = "closeDevToolsMenuItem";
-            this.closeDevToolsMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.closeDevToolsMenuItem.Size = new System.Drawing.Size(207, 22);
             this.closeDevToolsMenuItem.Text = "Close Dev Tools";
             this.closeDevToolsMenuItem.Click += new System.EventHandler(this.CloseDevToolsMenuItemClick);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(205, 6);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(204, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitMenuItemClick);
             // 
@@ -303,14 +310,14 @@ namespace CefSharp.WinForms.Example
             // isTextInputToolStripMenuItem
             // 
             this.isTextInputToolStripMenuItem.Name = "isTextInputToolStripMenuItem";
-            this.isTextInputToolStripMenuItem.Size = new System.Drawing.Size(271, 22);
+            this.isTextInputToolStripMenuItem.Size = new System.Drawing.Size(272, 22);
             this.isTextInputToolStripMenuItem.Text = "Does active element accept text input";
             this.isTextInputToolStripMenuItem.Click += new System.EventHandler(this.DoesActiveElementAcceptTextInputToolStripMenuItemClick);
             // 
             // doesElementWithIDExistToolStripMenuItem
             // 
             this.doesElementWithIDExistToolStripMenuItem.Name = "doesElementWithIDExistToolStripMenuItem";
-            this.doesElementWithIDExistToolStripMenuItem.Size = new System.Drawing.Size(271, 22);
+            this.doesElementWithIDExistToolStripMenuItem.Size = new System.Drawing.Size(272, 22);
             this.doesElementWithIDExistToolStripMenuItem.Text = "Does element with ID exist";
             this.doesElementWithIDExistToolStripMenuItem.Click += new System.EventHandler(this.DoesElementWithIdExistToolStripMenuItemClick);
             // 
@@ -320,7 +327,7 @@ namespace CefSharp.WinForms.Example
             this.goToDemoPageToolStripMenuItem,
             this.injectJavascriptCodeToolStripMenuItem});
             this.listenForButtonClickToolStripMenuItem.Name = "listenForButtonClickToolStripMenuItem";
-            this.listenForButtonClickToolStripMenuItem.Size = new System.Drawing.Size(271, 22);
+            this.listenForButtonClickToolStripMenuItem.Size = new System.Drawing.Size(272, 22);
             this.listenForButtonClickToolStripMenuItem.Text = "Listen for button click";
             // 
             // goToDemoPageToolStripMenuItem
@@ -346,41 +353,41 @@ namespace CefSharp.WinForms.Example
             this.loadExtensionsToolStripMenuItem,
             this.javascriptBindingStressTestToolStripMenuItem});
             this.testToolStripMenuItem.Name = "testToolStripMenuItem";
-            this.testToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+            this.testToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.testToolStripMenuItem.Text = "Test";
             // 
             // openDataUrlToolStripMenuItem
             // 
             this.openDataUrlToolStripMenuItem.Name = "openDataUrlToolStripMenuItem";
-            this.openDataUrlToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.openDataUrlToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.openDataUrlToolStripMenuItem.Text = "Open Data Url";
             this.openDataUrlToolStripMenuItem.Click += new System.EventHandler(this.OpenDataUrlToolStripMenuItemClick);
             // 
             // httpbinorgToolStripMenuItem
             // 
             this.httpbinorgToolStripMenuItem.Name = "httpbinorgToolStripMenuItem";
-            this.httpbinorgToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.httpbinorgToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.httpbinorgToolStripMenuItem.Text = "httpbin.org";
             this.httpbinorgToolStripMenuItem.Click += new System.EventHandler(this.OpenHttpBinOrgToolStripMenuItemClick);
             // 
             // runFileDialogToolStripMenuItem
             // 
             this.runFileDialogToolStripMenuItem.Name = "runFileDialogToolStripMenuItem";
-            this.runFileDialogToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.runFileDialogToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.runFileDialogToolStripMenuItem.Text = "Run File Dialog";
             this.runFileDialogToolStripMenuItem.Click += new System.EventHandler(this.RunFileDialogToolStripMenuItemClick);
             // 
             // loadExtensionsToolStripMenuItem
             // 
             this.loadExtensionsToolStripMenuItem.Name = "loadExtensionsToolStripMenuItem";
-            this.loadExtensionsToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.loadExtensionsToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.loadExtensionsToolStripMenuItem.Text = "Load Example Extension";
             this.loadExtensionsToolStripMenuItem.Click += new System.EventHandler(this.LoadExtensionsToolStripMenuItemClick);
             // 
             // javascriptBindingStressTestToolStripMenuItem
             // 
             this.javascriptBindingStressTestToolStripMenuItem.Name = "javascriptBindingStressTestToolStripMenuItem";
-            this.javascriptBindingStressTestToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.javascriptBindingStressTestToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.javascriptBindingStressTestToolStripMenuItem.Text = "Javascript Binding Stress Test";
             this.javascriptBindingStressTestToolStripMenuItem.Click += new System.EventHandler(this.JavascriptBindingStressTestToolStripMenuItemClick);
             // 
@@ -393,13 +400,6 @@ namespace CefSharp.WinForms.Example
             this.browserTabControl.Size = new System.Drawing.Size(730, 466);
             this.browserTabControl.TabIndex = 2;
             // 
-            // showDevToolsDockedToolStripMenuItem
-            // 
-            this.showDevToolsDockedToolStripMenuItem.Name = "showDevToolsDockedToolStripMenuItem";
-            this.showDevToolsDockedToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
-            this.showDevToolsDockedToolStripMenuItem.Text = "Show Dev Tools (Docked)";
-            this.showDevToolsDockedToolStripMenuItem.Click += new System.EventHandler(this.ShowDevToolsDockedMenuItemClick);
-            // 
             // BrowserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -411,6 +411,7 @@ namespace CefSharp.WinForms.Example
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "BrowserForm";
             this.Text = "BrowserForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BrowserForm_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
