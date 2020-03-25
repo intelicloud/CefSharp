@@ -30,10 +30,8 @@ namespace CefSharp.WinForms.Example
         {
             InitializeComponent();
 
-            var bitness = Environment.Is64BitProcess ? "x64" : "x86";
-            Text = "CefSharp.WinForms.Example - " + bitness;
-            WindowState = FormWindowState.Maximized;
-
+            var bitness = Environment.Is64BitProcess ? "x64" : "x86";            
+            WindowState = FormWindowState.Maximized;            
             Load += BrowserFormLoad;
 
             //Only perform layout when control has completly finished resizing

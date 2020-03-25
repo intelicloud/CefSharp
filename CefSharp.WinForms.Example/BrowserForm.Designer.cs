@@ -140,6 +140,7 @@ namespace CefSharp.WinForms.Example
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Visible = false;
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItemClick);
             // 
             // showDevToolsMenuItem
@@ -147,6 +148,7 @@ namespace CefSharp.WinForms.Example
             this.showDevToolsMenuItem.Name = "showDevToolsMenuItem";
             this.showDevToolsMenuItem.Size = new System.Drawing.Size(207, 22);
             this.showDevToolsMenuItem.Text = "Show Dev Tools (Default)";
+            this.showDevToolsMenuItem.Visible = false;
             this.showDevToolsMenuItem.Click += new System.EventHandler(this.ShowDevToolsMenuItemClick);
             // 
             // showDevToolsDockedToolStripMenuItem
@@ -154,6 +156,7 @@ namespace CefSharp.WinForms.Example
             this.showDevToolsDockedToolStripMenuItem.Name = "showDevToolsDockedToolStripMenuItem";
             this.showDevToolsDockedToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.showDevToolsDockedToolStripMenuItem.Text = "Show Dev Tools (Docked)";
+            this.showDevToolsDockedToolStripMenuItem.Visible = false;
             this.showDevToolsDockedToolStripMenuItem.Click += new System.EventHandler(this.ShowDevToolsDockedMenuItemClick);
             // 
             // closeDevToolsMenuItem
@@ -161,6 +164,7 @@ namespace CefSharp.WinForms.Example
             this.closeDevToolsMenuItem.Name = "closeDevToolsMenuItem";
             this.closeDevToolsMenuItem.Size = new System.Drawing.Size(207, 22);
             this.closeDevToolsMenuItem.Text = "Close Dev Tools";
+            this.closeDevToolsMenuItem.Visible = false;
             this.closeDevToolsMenuItem.Click += new System.EventHandler(this.CloseDevToolsMenuItemClick);
             // 
             // toolStripMenuItem3
@@ -279,21 +283,21 @@ namespace CefSharp.WinForms.Example
             // zoomInToolStripMenuItem
             // 
             this.zoomInToolStripMenuItem.Name = "zoomInToolStripMenuItem";
-            this.zoomInToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.zoomInToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.zoomInToolStripMenuItem.Text = "Zoom In";
             this.zoomInToolStripMenuItem.Click += new System.EventHandler(this.ZoomInToolStripMenuItemClick);
             // 
             // zoomOutToolStripMenuItem
             // 
             this.zoomOutToolStripMenuItem.Name = "zoomOutToolStripMenuItem";
-            this.zoomOutToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.zoomOutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.zoomOutToolStripMenuItem.Text = "Zoom Out";
             this.zoomOutToolStripMenuItem.Click += new System.EventHandler(this.ZoomOutToolStripMenuItemClick);
             // 
             // currentZoomLevelToolStripMenuItem
             // 
             this.currentZoomLevelToolStripMenuItem.Name = "currentZoomLevelToolStripMenuItem";
-            this.currentZoomLevelToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.currentZoomLevelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.currentZoomLevelToolStripMenuItem.Text = "Current Zoom Level";
             this.currentZoomLevelToolStripMenuItem.Click += new System.EventHandler(this.CurrentZoomLevelToolStripMenuItemClick);
             // 
@@ -306,6 +310,7 @@ namespace CefSharp.WinForms.Example
             this.scriptToolStripMenuItem.Name = "scriptToolStripMenuItem";
             this.scriptToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.scriptToolStripMenuItem.Text = "Script";
+            this.scriptToolStripMenuItem.Visible = false;
             // 
             // isTextInputToolStripMenuItem
             // 
@@ -355,6 +360,7 @@ namespace CefSharp.WinForms.Example
             this.testToolStripMenuItem.Name = "testToolStripMenuItem";
             this.testToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.testToolStripMenuItem.Text = "Test";
+            this.testToolStripMenuItem.Visible = false;
             // 
             // openDataUrlToolStripMenuItem
             // 
