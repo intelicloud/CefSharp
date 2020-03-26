@@ -17,18 +17,18 @@ namespace CefSharp.WinForms.Example
         {
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.findTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.findPreviousButton = new System.Windows.Forms.ToolStripButton();
+            this.findNextButton = new System.Windows.Forms.ToolStripButton();
             this.findCloseButton = new System.Windows.Forms.ToolStripButton();
             this.statusLabel = new System.Windows.Forms.Label();
             this.outputLabel = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.urlTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.browserSplitContainer = new System.Windows.Forms.SplitContainer();
-            this.browserPanel = new System.Windows.Forms.Panel();
             this.backButton = new System.Windows.Forms.ToolStripButton();
             this.forwardButton = new System.Windows.Forms.ToolStripButton();
+            this.urlTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.goButton = new System.Windows.Forms.ToolStripButton();
-            this.findPreviousButton = new System.Windows.Forms.ToolStripButton();
-            this.findNextButton = new System.Windows.Forms.ToolStripButton();
+            this.browserSplitContainer = new System.Windows.Forms.SplitContainer();
+            this.browserPanel = new System.Windows.Forms.Panel();
             this.toolStrip2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.browserSplitContainer)).BeginInit();
@@ -57,6 +57,26 @@ namespace CefSharp.WinForms.Example
             this.findTextBox.Name = "findTextBox";
             this.findTextBox.Size = new System.Drawing.Size(100, 25);
             this.findTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FindTextBoxKeyDown);
+            // 
+            // findPreviousButton
+            // 
+            this.findPreviousButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.findPreviousButton.Image = global::CefSharp.WinForms.Example.Properties.Resources.nav_left_green;
+            this.findPreviousButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.findPreviousButton.Name = "findPreviousButton";
+            this.findPreviousButton.Size = new System.Drawing.Size(23, 22);
+            this.findPreviousButton.Text = "Find Previous";
+            this.findPreviousButton.Click += new System.EventHandler(this.FindPreviousButtonClick);
+            // 
+            // findNextButton
+            // 
+            this.findNextButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.findNextButton.Image = global::CefSharp.WinForms.Example.Properties.Resources.nav_right_green;
+            this.findNextButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.findNextButton.Name = "findNextButton";
+            this.findNextButton.Size = new System.Drawing.Size(23, 22);
+            this.findNextButton.Text = "Find Next";
+            this.findNextButton.Click += new System.EventHandler(this.FindNextButtonClick);
             // 
             // findCloseButton
             // 
@@ -103,6 +123,26 @@ namespace CefSharp.WinForms.Example
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Layout += new System.Windows.Forms.LayoutEventHandler(this.HandleToolStripLayout);
             // 
+            // backButton
+            // 
+            this.backButton.Enabled = false;
+            this.backButton.Image = global::CefSharp.WinForms.Example.Properties.Resources.nav_left_green;
+            this.backButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(52, 22);
+            this.backButton.Text = "Back";
+            this.backButton.Click += new System.EventHandler(this.BackButtonClick);
+            // 
+            // forwardButton
+            // 
+            this.forwardButton.Enabled = false;
+            this.forwardButton.Image = global::CefSharp.WinForms.Example.Properties.Resources.nav_right_green;
+            this.forwardButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.forwardButton.Name = "forwardButton";
+            this.forwardButton.Size = new System.Drawing.Size(70, 22);
+            this.forwardButton.Text = "Forward";
+            this.forwardButton.Click += new System.EventHandler(this.ForwardButtonClick);
+            // 
             // urlTextBox
             // 
             this.urlTextBox.AutoSize = false;
@@ -110,6 +150,15 @@ namespace CefSharp.WinForms.Example
             this.urlTextBox.Name = "urlTextBox";
             this.urlTextBox.Size = new System.Drawing.Size(500, 25);
             this.urlTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.UrlTextBoxKeyUp);
+            // 
+            // goButton
+            // 
+            this.goButton.Image = global::CefSharp.WinForms.Example.Properties.Resources.nav_plain_green;
+            this.goButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.goButton.Name = "goButton";
+            this.goButton.Size = new System.Drawing.Size(42, 22);
+            this.goButton.Text = "Go";
+            this.goButton.Click += new System.EventHandler(this.GoButtonClick);
             // 
             // browserSplitContainer
             // 
@@ -132,55 +181,6 @@ namespace CefSharp.WinForms.Example
             this.browserPanel.Name = "browserPanel";
             this.browserPanel.Size = new System.Drawing.Size(730, 439);
             this.browserPanel.TabIndex = 3;
-            // 
-            // backButton
-            // 
-            this.backButton.Enabled = false;
-            this.backButton.Image = global::CefSharp.WinForms.Example.Properties.Resources.nav_left_green;
-            this.backButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(52, 22);
-            this.backButton.Text = "Back";
-            this.backButton.Click += new System.EventHandler(this.BackButtonClick);
-            // 
-            // forwardButton
-            // 
-            this.forwardButton.Enabled = false;
-            this.forwardButton.Image = global::CefSharp.WinForms.Example.Properties.Resources.nav_right_green;
-            this.forwardButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.forwardButton.Name = "forwardButton";
-            this.forwardButton.Size = new System.Drawing.Size(70, 22);
-            this.forwardButton.Text = "Forward";
-            this.forwardButton.Click += new System.EventHandler(this.ForwardButtonClick);
-            // 
-            // goButton
-            // 
-            this.goButton.Image = global::CefSharp.WinForms.Example.Properties.Resources.nav_plain_green;
-            this.goButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.goButton.Name = "goButton";
-            this.goButton.Size = new System.Drawing.Size(42, 22);
-            this.goButton.Text = "Go";
-            this.goButton.Click += new System.EventHandler(this.GoButtonClick);
-            // 
-            // findPreviousButton
-            // 
-            this.findPreviousButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.findPreviousButton.Image = global::CefSharp.WinForms.Example.Properties.Resources.nav_left_green;
-            this.findPreviousButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.findPreviousButton.Name = "findPreviousButton";
-            this.findPreviousButton.Size = new System.Drawing.Size(23, 22);
-            this.findPreviousButton.Text = "Find Previous";
-            this.findPreviousButton.Click += new System.EventHandler(this.FindPreviousButtonClick);
-            // 
-            // findNextButton
-            // 
-            this.findNextButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.findNextButton.Image = global::CefSharp.WinForms.Example.Properties.Resources.nav_right_green;
-            this.findNextButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.findNextButton.Name = "findNextButton";
-            this.findNextButton.Size = new System.Drawing.Size(23, 22);
-            this.findNextButton.Text = "Find Next";
-            this.findNextButton.Click += new System.EventHandler(this.FindNextButtonClick);
             // 
             // BrowserTabUserControl
             // 
